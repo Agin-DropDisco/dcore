@@ -1,5 +1,4 @@
 {
-  "contractName": "IDEXswapCallee",
   "abi": [
     {
       "constant": false,
@@ -32,394 +31,51 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount0\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amount1\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"DEXswapCall\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/mnt/d/DxSwap/All-Contract/DEXSWAP/dexswap-core/contracts/interfaces/IDEXswapCallee.sol\":\"IDEXswapCallee\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/mnt/d/DxSwap/All-Contract/DEXSWAP/dexswap-core/contracts/interfaces/IDEXswapCallee.sol\":{\"keccak256\":\"0x2df98b6ab8dd3aa48c3789e18fd4caf6f55365f9313f07ff272d5dbc6bd05b46\",\"urls\":[\"bzz-raw://7cb57e3ba77059f3e830815cd317826c40b5e2152ac68d4a9604eb7ac3aef907\",\"dweb:/ipfs/QmXgsmDCGFmwDE4WrFN2De5tWa9oT2KtAygpywZHwCNUCv\"]}},\"version\":1}",
-  "bytecode": "0x",
-  "deployedBytecode": "0x",
-  "sourceMap": "",
-  "deployedSourceMap": "",
-  "source": "pragma solidity >=0.5.0;\n\ninterface IDEXswapCallee {\n    function DEXswapCall(address sender, uint amount0, uint amount1, bytes calldata data) external;\n}\n",
-  "sourcePath": "/mnt/d/DxSwap/All-Contract/DEXSWAP/dexswap-core/contracts/interfaces/IDEXswapCallee.sol",
-  "ast": {
-    "absolutePath": "/mnt/d/DxSwap/All-Contract/DEXSWAP/dexswap-core/contracts/interfaces/IDEXswapCallee.sol",
-    "exportedSymbols": {
-      "IDEXswapCallee": [
-        3136
-      ]
+  "evm": {
+    "bytecode": {
+      "linkReferences": {},
+      "object": "",
+      "opcodes": "",
+      "sourceMap": ""
     },
-    "id": 3137,
-    "nodeType": "SourceUnit",
-    "nodes": [
-      {
-        "id": 3124,
-        "literals": [
-          "solidity",
-          ">=",
-          "0.5",
-          ".0"
-        ],
-        "nodeType": "PragmaDirective",
-        "src": "0:24:11"
-      },
-      {
-        "baseContracts": [],
-        "contractDependencies": [],
-        "contractKind": "interface",
-        "documentation": null,
-        "fullyImplemented": false,
-        "id": 3136,
-        "linearizedBaseContracts": [
-          3136
-        ],
-        "name": "IDEXswapCallee",
-        "nodeType": "ContractDefinition",
-        "nodes": [
-          {
-            "body": null,
-            "documentation": null,
-            "id": 3135,
-            "implemented": false,
-            "kind": "function",
-            "modifiers": [],
-            "name": "DEXswapCall",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 3133,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 3126,
-                  "name": "sender",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 3135,
-                  "src": "78:14:11",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 3125,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "78:7:11",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 3128,
-                  "name": "amount0",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 3135,
-                  "src": "94:12:11",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 3127,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "94:4:11",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 3130,
-                  "name": "amount1",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 3135,
-                  "src": "108:12:11",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 3129,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "108:4:11",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 3132,
-                  "name": "data",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 3135,
-                  "src": "122:19:11",
-                  "stateVariable": false,
-                  "storageLocation": "calldata",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes_calldata_ptr",
-                    "typeString": "bytes"
-                  },
-                  "typeName": {
-                    "id": 3131,
-                    "name": "bytes",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "122:5:11",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes_storage_ptr",
-                      "typeString": "bytes"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "77:65:11"
-            },
-            "returnParameters": {
-              "id": 3134,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "151:0:11"
-            },
-            "scope": 3136,
-            "src": "57:95:11",
-            "stateMutability": "nonpayable",
-            "superFunction": null,
-            "visibility": "external"
-          }
-        ],
-        "scope": 3137,
-        "src": "26:128:11"
-      }
-    ],
-    "src": "0:155:11"
+    "deployedBytecode": {
+      "linkReferences": {},
+      "object": "",
+      "opcodes": "",
+      "sourceMap": ""
+    }
   },
-  "legacyAST": {
-    "attributes": {
-      "absolutePath": "/mnt/d/DxSwap/All-Contract/DEXSWAP/dexswap-core/contracts/interfaces/IDEXswapCallee.sol",
-      "exportedSymbols": {
-        "IDEXswapCallee": [
-          3136
-        ]
-      }
-    },
-    "children": [
-      {
-        "attributes": {
-          "literals": [
-            "solidity",
-            ">=",
-            "0.5",
-            ".0"
-          ]
+  "interface": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
         },
-        "id": 3124,
-        "name": "PragmaDirective",
-        "src": "0:24:11"
-      },
-      {
-        "attributes": {
-          "baseContracts": [
-            null
-          ],
-          "contractDependencies": [
-            null
-          ],
-          "contractKind": "interface",
-          "documentation": null,
-          "fullyImplemented": false,
-          "linearizedBaseContracts": [
-            3136
-          ],
-          "name": "IDEXswapCallee",
-          "scope": 3137
+        {
+          "internalType": "uint256",
+          "name": "amount0",
+          "type": "uint256"
         },
-        "children": [
-          {
-            "attributes": {
-              "body": null,
-              "documentation": null,
-              "implemented": false,
-              "isConstructor": false,
-              "kind": "function",
-              "modifiers": [
-                null
-              ],
-              "name": "DEXswapCall",
-              "scope": 3136,
-              "stateMutability": "nonpayable",
-              "superFunction": null,
-              "visibility": "external"
-            },
-            "children": [
-              {
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "sender",
-                      "scope": 3135,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "address",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "address",
-                          "stateMutability": "nonpayable",
-                          "type": "address"
-                        },
-                        "id": 3125,
-                        "name": "ElementaryTypeName",
-                        "src": "78:7:11"
-                      }
-                    ],
-                    "id": 3126,
-                    "name": "VariableDeclaration",
-                    "src": "78:14:11"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "amount0",
-                      "scope": 3135,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint",
-                          "type": "uint256"
-                        },
-                        "id": 3127,
-                        "name": "ElementaryTypeName",
-                        "src": "94:4:11"
-                      }
-                    ],
-                    "id": 3128,
-                    "name": "VariableDeclaration",
-                    "src": "94:12:11"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "amount1",
-                      "scope": 3135,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint",
-                          "type": "uint256"
-                        },
-                        "id": 3129,
-                        "name": "ElementaryTypeName",
-                        "src": "108:4:11"
-                      }
-                    ],
-                    "id": 3130,
-                    "name": "VariableDeclaration",
-                    "src": "108:12:11"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "data",
-                      "scope": 3135,
-                      "stateVariable": false,
-                      "storageLocation": "calldata",
-                      "type": "bytes",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "bytes",
-                          "type": "bytes"
-                        },
-                        "id": 3131,
-                        "name": "ElementaryTypeName",
-                        "src": "122:5:11"
-                      }
-                    ],
-                    "id": 3132,
-                    "name": "VariableDeclaration",
-                    "src": "122:19:11"
-                  }
-                ],
-                "id": 3133,
-                "name": "ParameterList",
-                "src": "77:65:11"
-              },
-              {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 3134,
-                "name": "ParameterList",
-                "src": "151:0:11"
-              }
-            ],
-            "id": 3135,
-            "name": "FunctionDefinition",
-            "src": "57:95:11"
-          }
-        ],
-        "id": 3136,
-        "name": "ContractDefinition",
-        "src": "26:128:11"
-      }
-    ],
-    "id": 3137,
-    "name": "SourceUnit",
-    "src": "0:155:11"
-  },
-  "compiler": {
-    "name": "solc",
-    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
-  },
-  "networks": {},
-  "schemaVersion": "3.3.4",
-  "updatedAt": "2021-05-31T09:28:50.928Z",
-  "devdoc": {
-    "methods": {}
-  },
-  "userdoc": {
-    "methods": {}
-  }
+        {
+          "internalType": "uint256",
+          "name": "amount1",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "DEXswapCall",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": ""
 }
