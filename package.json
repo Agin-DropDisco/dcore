@@ -1,6 +1,6 @@
 {
   "name": "dexswap-core",
-  "version": "0.1.7",
+  "version": "0.1.5",
   "author": "Agin DropDisco",
   "files": [
     "contracts",
@@ -32,7 +32,6 @@
     "ts-node": "^8.5.4"
   },
   "scripts": {
-    "prepare": "truffle compile",
     "deploy:matic": "truffle migrate --network matic",
     "lint": "yarn prettier ./test/*.ts --check",
     "lint:fix": "yarn prettier ./test/*.ts --write",
