@@ -1,48 +1,52 @@
 {
-  "name": "dexswap-core",
-  "version": "0.1.7",
-  "author": "Agin DropDisco",
+  "name": "dexswap-upgradable",
+  "description": "🛠 Proxy DexSwap",
+  "version": "2.0.0",
+  "main": "index.js",
   "files": [
-    "contracts",
-    "build"
+    "build",
+    "contracts"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Agin-DropDisco/dexswap-core"
-  },
-  "engines": {
-    "node": ">=10"
-  },
-  "devDependencies": {
-    "@types/chai": "^4.2.6",
-    "@types/mocha": "^5.2.7",
-    "chai": "^4.2.0",
+  "license": "MIT",
+  "repository": "https://github.com/Agin-DropDisco/dexswap-core",
+  "keywords": [
+    "soneswap",
+    "ethereum",
+    "uniswap",
+    "sushiswap"
+  ],
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.0.0",
+    "@openzeppelin/contracts-upgradeable": "^4.0.0",
+    "@openzeppelin/test-helpers": "^0.5.10",
+    "@truffle/hdwallet-provider": "^1.2.1",
     "dotenv": "^8.2.0",
-    "ethereum-waffle": "^2.4.1",
-    "ethereumjs-util": "^6.2.0",
-    "ethers": "^4.0.45",
-    "mocha": "^6.2.2",
-    "prettier": "^1.19.1",
-    "rimraf": "^3.0.0",
-    "solc": "0.5.16",
+    "mocha": "^8.3.2",
+    "rimraf": "^3.0.2",
+    "truffle": "^5.3.9",
     "truffle-flattener": "^1.4.4",
-    "@openzeppelin/contracts": "^2.5.0",
-    "truffle-plugin-verify": "^0.5.8",
     "truffle-hdwallet-provider": "^1.0.17",
-    "ts-node": "^8.5.4"
+    "truffle-plugin-verify": "^0.5.8"
   },
   "scripts": {
-    "prepare": "truffle compile",
-    "deploy:matic": "truffle migrate --network matic",
-    "lint": "yarn prettier ./test/*.ts --check",
-    "lint:fix": "yarn prettier ./test/*.ts --write",
-    "clean": "rimraf ./build/",
-    "precompile": "yarn clean",
-    "compile": "waffle .waffle.json",
-    "prepublishOnly": "yarn test"
+    "precompile": "rimraf build .openzeppelin",
+    "compile": "yarn truffle compile",
+    "flatten": "mkdir -p build/flatten-contracts && yarn truffle-flattener",
+    "test": "yarn truffle test",
+    "deploy:ethereum": "yarn truffle migrate --to 2 --network ethereum",
+    "deploy:local": "yarn truffle migrate --to 2 --network dev",
+    "deploy:ropsten": "yarn truffle migrate --to 2 --network ropsten",
+    "deploy:rinkeby": "yarn truffle migrate --to 2 --network rinkeby",
+    "deploy:bsc": "yarn truffle migrate --to 2 --network bsc",
+    "deploy:bsc_testnet": "yarn truffle migrate --to 2 --network bsc_testnet",
+    "deploy-upgrade:ethereum": "yarn truffle migrate --to 3 --network ethereum",
+    "deploy-upgrade:local": "yarn truffle migrate --to 3 --network dev",
+    "deploy-upgrade:ropsten": "yarn truffle migrate --to 3 --network ropsten",
+    "deploy-upgrade:rinkeby": "yarn truffle migrate --to 3 --network rinkeby",
+    "deploy-upgrade:bsc": "yarn truffle migrate --to 3 --network bsc",
+    "deploy-upgrade:bsc_testnet": "yarn truffle migrate --to 3 --network bsc_testnet"
   },
-  "license": "AGPL-3.0-or-later",
-  "dependencies": {
-    "typescript": "^3.9.5"
+  "devDependencies": {
+    "@openzeppelin/truffle-upgrades": "^1.5.1"
   }
 }

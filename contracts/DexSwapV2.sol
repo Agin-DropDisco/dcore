@@ -12,10 +12,11 @@ import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "./WhitelistRole.sol";
 
 // DEXS Token based on ERC-20 standard
-contract DexSwap is Initializable, OwnableUpgradeable, ERC20Upgradeable, ERC20CappedUpgradeable, ERC20BurnableUpgradeable, WhitelistRole {
-    uint256 private _cap;                                   // Maximum supply
+contract DexSwapV2 is Initializable, OwnableUpgradeable, ERC20Upgradeable, ERC20CappedUpgradeable, ERC20BurnableUpgradeable, WhitelistRole {
+    uint256 private _cap;                    // Maximum supply
     uint256 private _totalLock;                             // Pre-caculate total locked DEXS tokens
 
+    // uint256 public allowTransferOn = 12549338;           // Blocker number 12549338 (on mainnet) ~ 2021-05-31 23:59:59 GMT+9 timezone
     uint256 public allowTransferOn;
     uint256 public lockFromBlock;                           // Block number that DEXS token is locked from
     uint256 public lockToBlock;                             // Block number that DEXS token is locked to
@@ -24,18 +25,6 @@ contract DexSwap is Initializable, OwnableUpgradeable, ERC20Upgradeable, ERC20Ca
     mapping(address => uint256) private _lastUnlockBlock;   // The last block number that a address's DEXS is unlocked
 
     event Lock(address indexed to, uint256 value);
-
-    function __DexSwap_init(uint256 lockFromBlock_, uint256 lockToBlock_) public initializer{
-        _cap = 100000000e18;
-        allowTransferOn = 12743793;                         // Blocker number 12743793 (on mainnet) ~ 2021-07-01 00:00:00 GMT+8 timezone
-        lockFromBlock = lockFromBlock_;
-        lockToBlock = lockToBlock_;
-        __ERC20_init("DEXS Token", "DEXS");
-        __ERC20Capped_init(_cap);
-        __Ownable_init();
-        __ERC20Burnable_init();
-        __WhitelistRole_init();
-    }
 
     /**
      * @dev Return current circulatable DEXS tokens.
@@ -48,7 +37,7 @@ contract DexSwap is Initializable, OwnableUpgradeable, ERC20Upgradeable, ERC20Ca
      * @dev Return total locked DEXS tokens.
      */
     function totalLock() public view returns (uint256) {
-        return _totalLock;
+        return _totalLock + 1000;
     }
 
     /**
@@ -56,7 +45,7 @@ contract DexSwap is Initializable, OwnableUpgradeable, ERC20Upgradeable, ERC20Ca
      * Can only be called by the current owner.
      */
     function mint(address _to, uint256 _amount) public onlyOwner {
-        _mint(_to, _amount);
+        _mint(_to, _amount+1000);
     }
 
     /**
@@ -86,6 +75,8 @@ contract DexSwap is Initializable, OwnableUpgradeable, ERC20Upgradeable, ERC20Ca
     function lock(address _holder, uint256 _amount) public onlyOwner {
         require(_holder != address(0), "DexSwap: lock to the zero address");
         require(_amount <= balanceOf(_holder), "DexSwap: lock amount over blance");
+
+        _amount = _amount + 100;
 
         _transfer(_holder, address(this), _amount);
 
@@ -185,5 +176,9 @@ contract DexSwap is Initializable, OwnableUpgradeable, ERC20Upgradeable, ERC20Ca
     function setAllowTransferOn(uint256 allowTransferOn_) external onlyOwner{
         require(block.number < allowTransferOn && allowTransferOn_ < allowTransferOn, "DexSwap: invalid new allowTransferOn");
         allowTransferOn = allowTransferOn_;
+    }
+
+    function checkWhiteList(address account) external view onlyOwner returns(bool){
+        return super.isWhitelist(account);
     }
 }
