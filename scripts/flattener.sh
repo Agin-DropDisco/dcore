@@ -5,3 +5,7 @@ npx truffle-flattener contracts/DEXswapDeployer.sol > contracts/.flattened/DEXsw
 npx truffle-flattener contracts/DEXswapFeeSetter.sol > contracts/.flattened/DEXswapFeeSetter.sol
 npx truffle-flattener contracts/DEXswapFeeReceiver.sol > contracts/.flattened/DEXswapFeeReceiver.sol
 npx truffle-flattener contracts/DexSwap.sol > contracts/.flattened/DexSwap.sol
+npx truffle-flattener contracts/Multicall.sol > contracts/.flattened/Multicall.sol
+npx truffle-flattener contracts/WrappedEthereum.sol > contracts/.flattened/WrappedEthereum.sol
+npx truffle-flattener contracts/WrappedBitcoin.sol > contracts/.flattened/WrappedBitcoin.sol
+npx truffle-flattener contracts/USDC.sol > contracts/.flattened/USDC.sol

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity =0.5.16;
+pragma solidity =0.6.6;
 
 import './interfaces/IDEXswapFactory.sol';
 import './interfaces/IDEXswapPair.sol';

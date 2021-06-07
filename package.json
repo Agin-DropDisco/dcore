@@ -1,6 +1,6 @@
 {
   "name": "dexswap-core",
-  "version": "0.1.7",
+  "version": "0.1.6",
   "author": "Agin DropDisco",
   "files": [
     "contracts",
@@ -16,6 +16,7 @@
   "devDependencies": {
     "@types/chai": "^4.2.6",
     "@types/mocha": "^5.2.7",
+    "@types/web3": "^1.2.2",
     "chai": "^4.2.0",
     "dotenv": "^8.2.0",
     "ethereum-waffle": "^2.4.1",
@@ -24,25 +25,26 @@
     "mocha": "^6.2.2",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.0",
-    "solc": "0.5.16",
+    "truffle-assertions": "^0.9.2",
     "truffle-flattener": "^1.4.4",
-    "@openzeppelin/contracts": "^2.5.0",
-    "truffle-plugin-verify": "^0.5.8",
     "truffle-hdwallet-provider": "^1.0.17",
+    "truffle-plugin-verify": "^0.5.8",
     "ts-node": "^8.5.4"
   },
   "scripts": {
-    "prepare": "truffle compile",
     "deploy:matic": "truffle migrate --network matic",
+    "deploy:rinkeby": "truffle migrate --network rinkeby",
     "lint": "yarn prettier ./test/*.ts --check",
     "lint:fix": "yarn prettier ./test/*.ts --write",
     "clean": "rimraf ./build/",
+    "flattener": "./scripts/flattener.sh",
     "precompile": "yarn clean",
     "compile": "waffle .waffle.json",
     "prepublishOnly": "yarn test"
   },
   "license": "AGPL-3.0-or-later",
   "dependencies": {
+    "@openzeppelin/contracts": "^3.1.0",
     "typescript": "^3.9.5"
   }
 }

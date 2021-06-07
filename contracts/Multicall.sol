@@ -1,4 +1,7 @@
-pragma solidity =0.5.16;
+// SPDX-License-Identifier: GPL-3.0
+// File: contracts/Multicall.sol
+
+pragma solidity =0.6.6;
 pragma experimental ABIEncoderV2;
 
 /// @title Multicall - Aggregate results from multiple read-only function calls
