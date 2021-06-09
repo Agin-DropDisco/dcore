@@ -1,4 +1,4 @@
-# DEXswap Core 
+# DEXswap Core . 
 
 ## Clone Repository
 
@@ -24,5 +24,3 @@
 ## Flatten Contracts
 
 `yarn flattener`
-
->> i use flattener for builder in oasis, so they can mixed all the contract without having to imported them one by one .
